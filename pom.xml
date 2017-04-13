@@ -48,13 +48,13 @@
 		<repository>
 			<id>packagecloud-jgraph</id>
 			<url>
-				packagecloud+https://packagecloud.io/jgraph/gae-stub
+				packagecloud+https://packagecloud.io/jgraph/drawio
 			</url>
 		</repository>
 		<snapshotRepository>
 			<id>packagecloud-jgraph</id>
 			<url>
-				packagecloud+https://packagecloud.io/jgraph/gae-stub
+				packagecloud+https://packagecloud.io/jgraph/drawio
 			</url>
 		</snapshotRepository>
 	</distributionManagement>
