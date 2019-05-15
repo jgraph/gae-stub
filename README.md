@@ -1,7 +1,7 @@
-# gae-stub
+https://packagecloud.io/jgraph/drawio# gae-stub
 Stub library for Google App Engine calls used in draw.io
 
-Maven hosted version at https://packagecloud.io/jgraph/gae-stub
+Maven hosted version at https://packagecloud.io/jgraph/drawio
 
 Before building ensure PACKAGECLOUD_TOKEN is defined in your environment, e.g. export PACKAGECLOUD_TOKEN=xxxxxxxxxxxxxxxxx in .bash_profile.
 
