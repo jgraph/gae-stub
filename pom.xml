@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mxgraph</groupId>
 	<artifactId>gae-stub</artifactId>
-	<version>1.0-3</version>
+	<version>1.0-4</version>
 	<packaging>jar</packaging>
 	
 	<name>gae-stub</name>
@@ -58,4 +58,44 @@
 			</url>
 		</snapshotRepository>
 	</distributionManagement>
+
+	<dependencies>
+        <dependency>
+            <groupId>net.spy</groupId>
+            <artifactId>spymemcached</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.diffplug.durian</groupId>
+            <artifactId>durian</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+		</dependency>
+		<dependency>
+            <groupId>org.memcached</groupId>
+            <artifactId>memcached-jcache</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+    		<systemPath>${basedir}/memcached-libs/memcached-jcache-1.0.jar</systemPath>
+		</dependency>
+	</dependencies>
 </project>
