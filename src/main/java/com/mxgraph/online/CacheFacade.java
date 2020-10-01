@@ -41,7 +41,6 @@ public class CacheFacade {
 		
 		MutableConfiguration<String, String> configuration =
 		    new MutableConfiguration<String, String>()  
-		        .setTypes(String.class, String.class)   
 		        .setStoreByValue(false) //Memcached does not support store by value
 		        .setExpiryPolicyFactory(CreatedExpiryPolicy.factoryOf(new Duration(TimeUnit.SECONDS, expirationDelta)));  
 		return cacheManager.createCache(name, configuration);
