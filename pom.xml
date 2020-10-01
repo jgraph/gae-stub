@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mxgraph</groupId>
 	<artifactId>gae-stub</artifactId>
-	<version>1.0-4</version>
+	<version>1.0.4</version>
 	<packaging>jar</packaging>
 	
 	<name>gae-stub</name>
@@ -60,6 +60,11 @@
 	</distributionManagement>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>3.8.1</version>
+		</dependency>
         <dependency>
             <groupId>net.spy</groupId>
             <artifactId>spymemcached</artifactId>

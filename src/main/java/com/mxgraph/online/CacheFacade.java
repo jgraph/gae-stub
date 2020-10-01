@@ -12,6 +12,7 @@ import javax.cache.expiry.Duration;
 import javax.cache.spi.CachingProvider;
 
 import org.memcached.jcache.MemcachedCachingProvider;
+import org.ehcache.jsr107.EhcacheCachingProvider;
 
 public class CacheFacade {
 
@@ -34,7 +35,7 @@ public class CacheFacade {
 		}
 		else
 		{
-			provider = Caching.getCachingProvider();
+			provider = Caching.getCachingProvider(EhcacheCachingProvider.class.getName());
 			cacheManager = provider.getCacheManager();
 		}
 		
