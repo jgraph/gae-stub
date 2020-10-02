@@ -24,7 +24,7 @@ public class CacheFacade {
 		CachingProvider provider;
 		CacheManager cacheManager;
 
-		if (memcachedEndpoint != null)
+		if (memcachedEndpoint != null && memcachedEndpoint.length() > 0)
 		{
 			provider = Caching.getCachingProvider(MemcachedCachingProvider.class.getName());
 			Properties properties = provider.getDefaultProperties();
