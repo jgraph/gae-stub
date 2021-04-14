@@ -5,8 +5,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mxgraph</groupId>
 	<artifactId>gae-stub</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
 	<packaging>jar</packaging>
+	
+	<properties>
+    	<maven.compiler.source>1.6</maven.compiler.source>
+    	<maven.compiler.target>1.6</maven.compiler.target>
+	</properties>
+	
 	
 	<name>gae-stub</name>
 	<description>Stub Google App Engine Library.</description>
@@ -99,8 +105,6 @@
             <groupId>org.memcached</groupId>
             <artifactId>memcached-jcache</artifactId>
 			<version>1.0</version>
-			<scope>system</scope>
-    		<systemPath>${basedir}/memcached-libs/memcached-jcache-1.0.jar</systemPath>
 		</dependency>
 	</dependencies>
 </project>
