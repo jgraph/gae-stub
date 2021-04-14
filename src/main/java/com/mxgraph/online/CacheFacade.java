@@ -18,6 +18,11 @@ public class CacheFacade {
 
 	private CacheFacade() {}
 
+	public static Cache<String, String> createCache()
+	{
+		return createCache("cache", 300); // default values (one cache and 5 min)
+	}
+
 	public static Cache<String, String> createCache(String name, int expirationDelta)
 	{
 		String memcachedEndpoint = System.getenv().get("DRAWIO_MEMCACHED_ENDPOINT");
