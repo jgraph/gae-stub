@@ -1,0 +1,572 @@
+{
+    "name": "draw.io",
+    "description": "draw.io for Confluence",
+    "key": "com.mxgraph.confluence.plugins.diagramly",
+    "baseUrl": "https://ac.draw.io",
+    "enableLicensing": true,
+	"apiMigrations":
+	{
+        "gdpr": true
+	},
+    "vendor": 
+    {
+        "name": "//SEIBERT/MEDIA",
+        "url": "https://www.seibert-media.net/"
+    },
+	"links":
+	{
+        "documentation": "https://drawio-app.com/getting-started-with-draw-io-for-confluence/"
+    },
+    "version": "1.4.65",
+    "authentication": 
+    {
+        "type": "none"
+    },
+    "modules": 
+    {
+		"adminPages": [
+			{
+                "key": "gliffyImport",
+                "url": "/connect/confluence/admin.html",
+                "name": {
+                    "value": "Gliffy Mass Import",
+                    "i18n": "gliffyImport"
+                },
+                "location": "system.admin/drawio-admin-panel"
+            },
+			{
+                "key": "lucidImport",
+                "url": "/connect/confluence/lucidMassImport.html",
+                "name": {
+                    "value": "Lucidchart Mass Import",
+                    "i18n": "lucidImport"
+                },
+                "location": "system.admin/drawio-admin-panel"
+            },
+            {
+                "key": "drawioConfig",
+                "url": "/connect/confluence/config.html",
+                "name": {
+                    "value": "Configuration",
+                    "i18n": "drawConfig"
+                },
+                "location": "system.admin/drawio-admin-panel"
+            }
+		],
+        "postInstallPage": {
+          	"key": "postInstall",
+            "url": "/connect/confluence/support.html",
+            "name": {
+                "value": "Welcome to draw.io",
+                "i18n": "postinstall"
+            }
+        },
+		"generalPages": [
+            {
+                "key": "lightbox",
+                "location": "hidden",
+                "url": "/connect/confluence/viewer-1-4-42.html?lightbox=1",
+                "name": {
+                    "value": "Lightbox",
+                    "i18n": "lightbox"
+                }
+            },
+            {
+                "key": "customContentViewer",
+                "location": "hidden",
+                "url": "/connect/confluence/viewer-1-4-42.html?custom=1&contentId={content.id}",
+                "name": {
+                    "value": "draw.io Viewer",
+                    "i18n": "drawViewer"
+                }
+            },
+            {
+                "key": "customContentList",
+                "location": "hidden",
+                "url": "/connect/confluence/list.html?space={space.key}&plugin={content.plugin}",
+                "name": {
+                    "value": "draw.io Diagrams List",
+                    "i18n": "drawList"
+                }
+            },
+            {
+            	"key": "customContentEditor",
+                "location": "hidden",
+                "url": "/connect/confluence/macroEditor-1-4-8.html?custom=1",
+                "name": {
+                    "value": "draw.io Editor",
+                    "i18n": "drawEditor"
+                }
+            },
+            {
+            	"key": "macroEditor",
+                "location": "hidden",
+                "url": "/connect/confluence/macroEditor-1-4-8.html",
+                "name": {
+                    "value": "draw.io Editor",
+                    "i18n": "drawEditor"
+                }
+            },
+            {
+            	"key": "splashEditor",
+                "location": "hidden",
+                "url": "/connect/confluence/splashEditor.html",
+                "name": {
+                    "value": "draw.io Splash Editor",
+                    "i18n": "drawSplashEditor"
+                }
+            },
+            {
+	          	"key": "support",
+	          	"location": "hidden",
+	            "url": "/connect/confluence/support.html",
+	            "name": {
+	                "value": "draw.io Support",
+	                "i18n": "support"
+	            },
+				"conditions" : [
+					{
+						"condition": "user_is_logged_in"
+					}
+				]
+	        },
+            {
+            	"key": "gotoCCPage",
+                "location": "hidden",
+                "url": "/connect/confluence/list.html?cc=1",
+                "name": {
+                    "value": "draw.io Diagram",
+                    "i18n": "drawioDiagram"
+                }
+            }
+        ],
+        "customContent": [{
+                "key": "drawio-diagram",
+                "name": {
+                    "value": "draw.io Diagrams",
+                    "i18n": "drawDiagrams"
+                },
+                "uiSupport": {
+                    "contentViewComponent": {
+                        "moduleKey": "customContentViewer"
+                    },
+                    "listViewComponent": {
+                        "moduleKey": "customContentList"
+                    },
+                    "icons": {
+                        "item": {
+                            "url": "/images/drawlogo48.png"
+                        }
+                    }
+                },
+                "apiSupport": {
+                    "supportedContainerTypes": ["page", "comment", "space", "blogpost"],
+                    "supportedChildTypes": ["attachment"],
+                    "indexing": {
+                        "enabled": true
+                    }
+                }
+            }
+        ],
+        "dynamicContentMacros": 
+        [
+            {
+                "name": 
+                {
+                    "i18n": "drawioMacro",
+                    "value": "draw.io Diagram"
+                },
+                "url": "/connect/confluence/viewer-1-4-42.html?ceoId=${content.id}&diagramName=${diagramName}&revision=${revision}&width=${width}&height=${height}&tbstyle=${tbstyle}&simple=${simple}&lbox=${lbox}&zoom=${zoom}&links=${links}&owningPageId=${pageId}&displayName=${diagramDisplayName}&contentId={contentId}&custContentId={custContentId}&contentVer={contentVer}&inComment={inComment}&aspect={aspect}&pCenter={pCenter}&hiRes={hiResPreview}&templateUrl={templateUrl}&tmpBuiltIn={tmpBuiltIn}&mVer={mVer}&pageInfo={pageInfo}",
+                "width": "100%",
+                "description": 
+                {
+                    "i18n": "drawDesc",
+                    "value": "Inserts a new draw.io diagram"
+                }, "icon": 
+                {
+		          "width": 128,
+		          "height": 128,
+		          "url": "/images/drawlogo128.png"
+		        },
+		        "categories": [
+		          "visuals"
+		        ],
+		        "outputType": "block",
+		        "featured": true,
+                "key": "drawio",
+			    "parameters": 
+			    [
+				    {
+				      "identifier": "diagramName",
+				      "name": 
+				      {
+				        "value": "Diagram name (do not change)",
+                    	"i18n": "diagramName"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+				      "identifier": "autoSize",
+				      "name": 
+				      {
+				        "value": "automatic size",
+                    	"i18n": "automaticSize"
+				      },
+				      "type": "boolean",
+				      "defaultValue": "true"
+				    },
+				    {
+						"identifier": "pageInfo",
+						"name": 
+						{
+							"value": "Parent page info",
+							"i18n": "pPageInfo"
+						},
+						"type": "confluence-content",
+						"required": true,
+						"defaultValue": "None"
+					},
+				    {
+				      "identifier": "PageId",
+				      "name": 
+				      {
+				        "value": "Parent page ID",
+                    	"i18n": "pPageID"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+				      "identifier": "baseUrl",
+				      "name": 
+				      {
+				        "value": "Confluence Base URL",
+                    	"i18n": "baseUrl"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+				      "identifier": "width",
+				      "name": 
+				      {
+				        "value": "Diagram width",
+                    	"i18n": "dWidth"
+				      },
+				      "type": "string"
+				    },
+				    {
+				      "identifier": "height",
+				      "name": 
+				      {
+				        "value": "Diagram height",
+                   		"i18n": "dHeight"
+				      },
+				      "type": "string"
+				    }
+  				],
+  				"editor": {
+				    "url": "/connect/confluence/initEditor.html?ceoId=${content.id}&diagramName=${diagramName}",
+				    "width": "100%",
+				    "height": "100%",
+				    "editTitle":
+				    {
+				    	"value" : "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+				    },
+				    "insertTitle":
+				    {
+				    	"value" : "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+				    }
+				},
+				"imagePlaceholder": {
+				    "width": 500,
+				    "height": 300,
+				    "url": "/connectImage",
+				    "applyChrome": true
+				},
+				"renderModes": {
+		          "default": {
+		            "url": "/connectRender?pageId=${content.id}&diagramName=${diagramName}&tempPreview=${tempPreview}&width=${width}&height=${height}&zoom=${zoom}"
+		          }
+		        }
+            },
+            {
+                "name": 
+                {
+                    "i18n": "incDrawioMacro",
+                    "value": "Embed draw.io Diagram"
+                },
+                "url": "/connect/confluence/viewer-1-4-42.html?linked=1&ceoId=${content.id}&imgPageId=${imgPageId}&diagramName=${diagramName}&revision=${revision}&width=${width}&height=${height}&tbstyle=${tbstyle}&simple=${simple}&lbox=${lbox}&zoom=${zoom}&links=${links}&owningPageId=${pageId}&displayName=${diagramDisplayName}&contentId=${contentId}&custContentId={custContentId}&contentVer=${contentVer}&diagramUrl=${diagramUrl}&csvFileUrl=${csvFileUrl}&aspect=${aspect}&aspectHash=${aspectHash}&attVer=${attVer}&service=${service}&sFileId=${sFileId}&odriveId=${odriveId}&pCenter={pCenter}&hiRes={hiResPreview}&isTemplate={isTemplate}&isUp={isUpload}&GHOwner={GHOwner}&GHRepository={GHRepository}&GHBranch={GHBranch}&GHPriv={GHIsPrivate}&sketch={isSketch}&pageInfo={pageInfo}",
+                "width": "100%",
+                "description": 
+                {
+                    "i18n": "embedDesc",
+                    "value": "Embed an existing draw.io diagram"
+                }, "icon": 
+                {
+		          "width": 128,
+		          "height": 128,
+		          "url": "/images/drawlogo128.png"
+		        },
+		        "categories": [
+		          "visuals"
+		        ],
+		        "outputType": "block",
+		        "featured": true,
+                "key": "inc-drawio",
+			    "parameters": 
+			    [
+				    {
+				      "identifier": "diagramName",
+				      "name": 
+				      {
+				        "value": "Diagram name (do not change)",
+                    	"i18n": "diagramName"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+				      "identifier": "autoSize",
+				      "name": 
+				      {
+				        "value": "automatic size",
+                    	"i18n": "automaticSize"
+				      },
+				      "type": "boolean",
+				      "defaultValue": "true"
+				    },
+				    {
+						"identifier": "pageInfo",
+						"name": 
+						{
+							"value": "Parent page info",
+							"i18n": "pPageInfo"
+						},
+						"type": "confluence-content",
+						"required": true,
+						"defaultValue": "None"
+					},
+				    {
+				      "identifier": "PageId",
+				      "name": 
+				      {
+				        "value": "Parent page ID",
+                    	"i18n": "pPageID"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+				      "identifier": "baseUrl",
+				      "name": 
+				      {
+				        "value": "Confluence Base URL",
+                    	"i18n": "baseUrl"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+				      "identifier": "width",
+				      "name": 
+				      {
+				        "value": "Diagram width",
+                    	"i18n": "dWidth"
+				      },
+				      "type": "string"
+				    },
+				    {
+				      "identifier": "height",
+				      "name": 
+				      {
+				        "value": "Diagram height",
+                    	"i18n": "dHeight"
+				      },
+				      "type": "string"
+				    }
+  				],
+  				"editor": {
+				    "url": "/connect/confluence/includeDiagram.html",
+				    "width": "80%",
+				    "height": "60%",
+					"insertTitle": {
+						"i18n": "incDrawioMacro",
+						"value": "Embed draw.io Diagram"
+					},
+					"editTitle": {
+						"i18n": "incDrawioMacro",
+						"value": "Embed draw.io Diagram"
+					}
+				},
+				"imagePlaceholder": {
+				    "width": 500,
+				    "height": 300,
+				    "url": "/connectImage",
+				    "applyChrome": true
+				},
+				"renderModes": {
+		          "default": {
+		            "url": "/connectRender?pageId=${pageId}&imgPageId=${imgPageId}&diagramName=${diagramName}&tempPreview=${tempPreview}&width=${width}&height=${height}&zoom=${zoom}&aspectHash={aspectHash}"
+		          }
+		        }
+            },
+            {
+                "name": 
+                {
+                    "i18n": "drawioSketchMacro",
+                    "value": "draw.io Board"
+                },
+                "url": "/connect/confluence/viewer-1-4-42.html?ceoId=${content.id}&diagramName=${diagramName}&revision=${revision}&width=${width}&height=${height}&tbstyle=${tbstyle}&simple=${simple}&lbox=${lbox}&zoom=${zoom}&links=${links}&owningPageId=${pageId}&displayName=${diagramDisplayName}&contentId={contentId}&custContentId={custContentId}&contentVer={contentVer}&inComment={inComment}&aspect={aspect}&pCenter={pCenter}&hiRes={hiResPreview}&templateUrl={templateUrl}&tmpBuiltIn={tmpBuiltIn}&mVer={mVer}&pageInfo={pageInfo}&sketch=1",
+                "width": "100%",
+                "description": 
+                {
+                    "i18n": "drawSketchDesc",
+                    "value": "Inserts a new draw.io board"
+                }, "icon": 
+                {
+		          "width": 128,
+		          "height": 128,
+		          "url": "/images/sketch-logo128.png"
+		        },
+		        "categories": [
+		          "visuals"
+		        ],
+		        "outputType": "block",
+		        "featured": true,
+                "key": "drawio-sketch",
+			    "parameters": 
+			    [
+				    {
+				      "identifier": "diagramName",
+				      "name": 
+				      {
+				        "value": "Diagram name (do not change)",
+                    	"i18n": "diagramName"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+						"identifier": "pageInfo",
+						"name": 
+						{
+							"value": "Parent page info",
+							"i18n": "pPageInfo"
+						},
+						"type": "confluence-content",
+						"required": true,
+						"defaultValue": "None"
+					},
+				    {
+				      "identifier": "PageId",
+				      "name": 
+				      {
+				        "value": "Parent page ID",
+                    	"i18n": "pPageID"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+				      "identifier": "baseUrl",
+				      "name": 
+				      {
+				        "value": "Confluence Base URL",
+                    	"i18n": "baseUrl"
+				      },
+				      "type": "string",
+				      "required": true,
+            		  "multiple": false,
+            		  "defaultValue": "None"
+				    },
+				    {
+				      "identifier": "width",
+				      "name": 
+				      {
+				        "value": "Diagram width",
+                    	"i18n": "dWidth"
+				      },
+				      "type": "string"
+				    },
+				    {
+				      "identifier": "height",
+				      "name": 
+				      {
+				        "value": "Diagram height",
+                   		"i18n": "dHeight"
+				      },
+				      "type": "string"
+				    }
+  				],
+  				"editor": {
+				    "url": "/connect/confluence/initEditor.html?ceoId=${content.id}&diagramName=${diagramName}&sketch=1",
+				    "width": "100%",
+				    "height": "100%"
+				},
+				"imagePlaceholder": {
+				    "width": 500,
+				    "height": 300,
+				    "url": "/connectImage",
+				    "applyChrome": true
+				},
+				"renderModes": {
+		          "default": {
+		            "url": "/connectRender?pageId=${content.id}&diagramName=${diagramName}&tempPreview=${tempPreview}&width=${width}&height=${height}&zoom=${zoom}"
+		          }
+		        }
+            }
+        ],
+    	"webSections": [
+	        {
+	            "name": {
+	                "value": "draw.io Add-on"
+	            },
+	            "location": "system.admin",
+	            "key": "drawio-admin-panel"
+	        }
+        ],
+        "configurePage": {
+            "key": "drawioConfig2",
+            "name": {
+                "value": "draw.io Configuration",
+                "i18n": "drawConfig"
+            },
+            "url": "/connect/confluence/config.html"
+        }
+    },
+    "scopes": [
+    "read",
+    "write",
+    "delete"
+  	],
+  	"translations": {
+        "paths": {
+			"de-DE": "/connect/confluence/i18n/de_DE.json",
+			"en-US": "/connect/confluence/i18n/en.json",
+			"es-ES": "/connect/confluence/i18n/es_ES.json",
+			"fi-FI": "/connect/confluence/i18n/fi_FI.json",
+			"fr-FR": "/connect/confluence/i18n/fr_FR.json",
+            "ja-JP": "/connect/confluence/i18n/ja_JP.json",
+            "ko-KR": "/connect/confluence/i18n/ko_KR.json",
+            "ru-RU": "/connect/confluence/i18n/ru_RU.json"
+        }
+    }
+}
