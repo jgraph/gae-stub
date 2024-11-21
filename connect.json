@@ -559,11 +559,10 @@
   	],
   	"translations": {
         "paths": {
-			"de-DE": "/connect/confluence/i18n/de_DE.json",
-			"en-US": "/connect/confluence/i18n/en.json",
-			"es-ES": "/connect/confluence/i18n/es_ES.json",
-			"fi-FI": "/connect/confluence/i18n/fi_FI.json",
-			"fr-FR": "/connect/confluence/i18n/fr_FR.json",
+            "de-DE": "/connect/confluence/i18n/de_DE.json",
+            "en-US": "/connect/confluence/i18n/en.json",
+            "es-ES": "/connect/confluence/i18n/es_ES.json",
+            "fr-FR": "/connect/confluence/i18n/fr_FR.json",
             "ja-JP": "/connect/confluence/i18n/ja_JP.json",
             "ko-KR": "/connect/confluence/i18n/ko_KR.json",
             "ru-RU": "/connect/confluence/i18n/ru_RU.json"
